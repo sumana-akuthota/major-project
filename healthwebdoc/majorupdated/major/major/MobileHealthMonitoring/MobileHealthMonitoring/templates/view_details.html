@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    {% include "header.html" %}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        h2 {
+            color: #333;
+        }
+        #search-container {
+            margin-bottom: 20px;
+            text-align: right;
+        }
+        #search-input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 300px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+            margin: 20px 0;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        @media (max-width: 600px) {
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    {% include "menu2.html" %}
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    <h2>Claim Request Details Summary</h2>
+    <p><strong>Approved:</strong> {{ approved_count }} | <strong>Pending:</strong> {{ pending_count }}</p>
+
+    <div id="search-container">
+        <input type="text" id="search-input" onkeyup="searchClaims()" placeholder="Search by Health Card No, Patient Name, Hospital Name, or Status...">
+    </div>
+
+    <table>
+        <tr>
+            <th>Health Card No</th>
+            <th>Aadhar Card No</th>
+            <th>Patient Name</th>
+            <th>Hospital Name</th>
+            <th>Patients Contact</th>
+            <th>Policy Name</th>
+            <th>Policy Description</th>
+            <th>Coverage Amount</th>
+            <th>Status</th>
+        </tr>
+        {% for claim in claims_summary %}
+        <tr class="claim-row">
+            <td class="healthcard-no">{{ claim.health_card_number_patient }}</td>
+            <td class="aadhar-no">{{ claim.aadhar_no }}</td>
+            <td class="patient-name">{{ claim.patient_name }}</td>
+            <td class="hospital-name">{{ claim.hospital_name }}</td>
+            <td>{{ claim.hospital_contact }}</td>
+            <td>{{ claim.policy_name }}</td>
+            <td>{{ claim.policy_description }}</td>
+            <td>{{ claim.coverage_amount }}</td>
+            <td class="status">{{ claim.status }}</td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="9">No claim request records found.</td></tr> {% endfor %}
+    </table>
+
+    <script>
+        function searchClaims() {
+            const input = document.getElementById("search-input");
+            const filter = input.value.toUpperCase();
+            const table = document.querySelector("table");
+            const rows = table.getElementsByClassName("claim-row");
+
+            for (let i = 0; i < rows.length; i++) {
+                const healthcardTd = rows[i].getElementsByClassName("healthcard-no")[0];
+                const patientNameTd = rows[i].getElementsByClassName("patient-name")[0];
+                const hospitalNameTd = rows[i].getElementsByClassName("hospital-name")[0];
+                const statusTd = rows[i].getElementsByClassName("status")[0];
+
+                let healthcard = "";
+                let patientName = "";
+                let hospitalName = "";
+                let status = "";
+
+                if (healthcardTd) {
+                    healthcard = healthcardTd.textContent.toUpperCase();
+                }
+                if (patientNameTd) {
+                    patientName = patientNameTd.textContent.toUpperCase();
+                }
+                if (hospitalNameTd) {
+                    hospitalName = hospitalNameTd.textContent.toUpperCase();
+                }
+                if (statusTd) {
+                    status = statusTd.textContent.toUpperCase();
+                }
+
+                if (healthcard.indexOf(filter) > -1 || patientName.indexOf(filter) > -1 || hospitalName.indexOf(filter) > -1 || status.indexOf(filter) > -1) {
+                    rows[i].style.display = "";
+                } else {
+                    rows[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+    {% include "footer.html" %}
+</body>
+</html>

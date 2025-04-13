@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MobileHealthInformation"
+        tools:targetApi="31">
+        <activity
+            android:name=".view.FamilySearchInPatient"
+            android:exported="false" />
+        <activity
+            android:name=".view.search_family_details"
+            android:exported="false" />
+        <activity
+            android:name=".view.family_details"
+            android:exported="false" />
+        <activity
+            android:name=".patient_family_details"
+            android:exported="false" />
+        <activity android:name=".view.AddHealthPolicy" />
+        <activity android:name=".view.AddHealthRecord" />
+        <activity android:name=".view.AddPatient" />
+        <activity android:name=".view.AdminHome" />
+        <activity android:name=".view.AdminListHospitals" />
+        <activity android:name=".view.AdminViewHealthPolicy" />
+        <activity android:name=".view.AdminViewPolicyClaimRequest" />
+        <activity android:name=".view.HospitalHome" />
+        <activity android:name=".view.HospitalLogin" />
+        <activity android:name=".view.HospitalRegistration" />
+        <activity android:name=".view.HospitalViewHealthPolicy" />
+        <activity android:name=".view.HospitalViewPolicyClaimRequest" />
+        <activity android:name=".view.ListHealthPolicies" />
+        <activity android:name=".view.ListHealthRecords" />
+        <activity android:name=".view.ListPolicyClaimRequests" />
+        <activity android:name=".view.PatientHome" />
+        <activity android:name=".view.PatientLogin" />
+        <activity android:name=".view.PatientViewPolicyClaimRequest" />
+        <activity android:name=".view.SearchPatient" />
+        <activity android:name=".view.ValidateHospitalOTP" />
+        <activity android:name=".view.ViewHealthRecord" />
+        <activity android:name=".view.ViewHospital" />
+        <activity android:name=".view.ViewPatient" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.MobileHealthInformation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

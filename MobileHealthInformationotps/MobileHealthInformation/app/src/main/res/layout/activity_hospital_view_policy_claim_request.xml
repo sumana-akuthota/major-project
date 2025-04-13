@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background1"
+        tools:context=".view.HospitalViewPolicyClaimfamilyhealthcard">
+
+        <TextView
+            android:textSize="23dp"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:id="@+id/hospitalviewpolicyclaim"/>
+
+        <TextView
+            android:textSize="23dp"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:id="@+id/hospitalviewpolicyclaimrequestaadhaarno"/>
+
+        <TextView
+            android:textSize="23dp"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            android:id="@+id/hospitalviewpolicyclaimrequestpatientname"/>
+
+        <TextView
+            android:textSize="23dp"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:id="@+id/hospitalviewpolicyclaimrequestage"/>
+
+        <TextView
+            android:textSize="23dp"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:id="@+id/hospitalviewpolicyclaimrequestgender"/>
+
+        <TextView
+            android:textSize="23dp"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:id="@+id/hospitalviewpolicyclaimrequestpatientcontactno"/>
+
+        <TextView
+            android:textSize="23dp"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:id="@+id/hospitalviewpolicyclaimrequestaddress"/>
+
+        <TextView
+            android:textSize="23dp"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:id="@+id/hospitalviewpolicyclaimrequesthospitalname"/>
+
+        <TextView
+            android:textSize="23dp"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:id="@+id/hospitalviewpolicyclaimrequestlocation"/>
+
+        <TextView
+            android:textSize="23dp"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:id="@+id/hospitalviewpolicyclaimrequesthospitalcontactno"/>
+
+        <TextView
+            android:textSize="23dp"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:id="@+id/hospitalviewpolicyclaimrequestpolicyname"/>
+
+        <TextView
+            android:textSize="23dp"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:id="@+id/hospitalviewpolicyclaimrequestpolicydescription"/>
+
+        <TextView
+            android:textSize="23dp"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:id="@+id/hospitalviewpolicyclaimrequestcoverageamount"/>
+
+        <TextView
+            android:textSize="23dp"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:id="@+id/hospitalviewpolicyclaimrequestdescription"/>
+
+        <TextView
+            android:textSize="23dp"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:id="@+id/hospitalviewpolicyclaimrequeststatus"/>
+
+        <Button
+            android:id="@+id/hospitalviewpolicyclaimrequestaddhealthrecord"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Health Records"/>
+
+        <Button
+            android:id="@+id/hospitalviewpolicyclaimrequestviewhealthrecords"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View Health Records"/>
+
+        <Button
+            android:id="@+id/hospitalviewpolicyclaimrequestback"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Back"/>
+
+    </LinearLayout>
+
+</ScrollView>

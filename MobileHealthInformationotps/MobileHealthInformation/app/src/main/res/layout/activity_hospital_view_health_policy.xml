@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".view.HospitalViewHealthPolicy"
+    android:background="@drawable/background1"
+    android:gravity="center">
+
+    <TextView
+        android:textSize="23dp"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:id="@+id/hospitalviewhealthpolicyname"/>
+
+    <TextView
+        android:textSize="23dp"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:id="@+id/hospitalviewhealthpolicydescription"/>
+
+    <TextView
+        android:textSize="23dp"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:id="@+id/hospitalviewhealthpolicycoverageamount"/>
+
+    <EditText
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Claim Request Description"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
+        android:id="@+id/hospitalviewhealthpolicyclaimrequestdescription"/>
+
+    <Button
+        android:id="@+id/hospitalviewhealthpolicysendrequest"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Send Claim Request"/>
+
+    <Button
+        android:id="@+id/hospitalviewhealthpolicyback"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Back"/>
+
+</LinearLayout>

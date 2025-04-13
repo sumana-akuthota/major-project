@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background1"
+        tools:context=".view.AdminViewPolicyClaimRequest">
+
+    <TextView
+        android:textSize="23dp"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:id="@+id/adminviewpolicyclaimrequestaadhaarno"/>
+
+    <TextView
+        android:textSize="23dp"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:id="@+id/adminviewpolicyclaimrequestpatientname"/>
+
+    <TextView
+        android:textSize="23dp"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:id="@+id/adminviewpolicyclaimrequestage"/>
+
+    <TextView
+        android:textSize="23dp"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:id="@+id/adminviewpolicyclaimrequestgender"/>
+
+    <TextView
+        android:textSize="23dp"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:id="@+id/adminviewpolicyclaimrequestpatientcontactno"/>
+
+    <TextView
+        android:textSize="23dp"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:id="@+id/adminviewpolicyclaimrequestaddress"/>
+
+    <TextView
+        android:textSize="23dp"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:id="@+id/adminviewpolicyclaimrequesthospitalname"/>
+
+    <TextView
+        android:textSize="23dp"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:id="@+id/adminviewpolicyclaimrequestlocation"/>
+
+    <TextView
+        android:textSize="23dp"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:id="@+id/adminviewpolicyclaimrequesthospitalcontactno"/>
+
+    <TextView
+        android:textSize="23dp"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:id="@+id/adminviewpolicyclaimrequestpolicyname"/>
+
+    <TextView
+        android:textSize="23dp"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:id="@+id/adminviewpolicyclaimrequestpolicydescription"/>
+
+    <TextView
+        android:textSize="23dp"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:id="@+id/adminviewpolicyclaimrequestcoverageamount"/>
+
+    <TextView
+        android:textSize="23dp"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:id="@+id/adminviewpolicyclaimrequestdescription"/>
+
+
+        <TextView
+            android:textSize="23dp"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:id="@+id/adminviewpolicyclaimrequestdocument"/>
+        <TextView
+        android:textSize="23dp"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:id="@+id/adminviewpolicyclaimrequeststatus"/>
+
+    <Button
+        android:id="@+id/adminviewpolicyclaimrequestapprove"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Approve Request"/>
+
+    <Button
+        android:id="@+id/adminviewpolicyclaimrequestreject"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Reject Request"/>
+
+    <Button
+        android:id="@+id/adminviewpolicyclaimrequestback"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Back"/>
+
+    </LinearLayout>
+
+</ScrollView>

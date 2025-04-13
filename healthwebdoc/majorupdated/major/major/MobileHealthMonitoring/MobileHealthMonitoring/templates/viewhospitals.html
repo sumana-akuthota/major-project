@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    {% include "header.html" %}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        #search-container {
+            margin-bottom: 20px;
+            text-align: right;
+        }
+        #search-input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 300px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+            margin: 20px 0;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        @media (max-width: 600px) {
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    {% include "menu2.html" %}
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    <h1>Hospital List</h1>
+    <h1><strong>{{ message }}</strong></h1>
+
+    <div id="search-container">
+        <input type="text" id="search-input" onkeyup="searchHospitals()" placeholder="Search by ID, Name, or Location...">
+    </div>
+
+    <table id="customers">
+        <tr>
+            <th>Hospital ID</th>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Mobile</th>
+            <th>Is Active?</th>
+            <th>Action</th>
+        </tr>
+
+        {% for record_id, record in hospitals.items %}
+        <tr class="hospital-row">
+            <td class="hospital-id">{{ record.hospitalId }}</td>
+            <td class="hospital-name">{{ record.name }}</td>
+            <td class="hospital-location">{{ record.location }}</td>
+            <td>{{ record.contactNo }}</td>
+            <td>{{ record.active|yesno:"Yes,No" }}</td>
+            <td>
+                {% if record.active %}
+                    <a href="/updatehospital?id={{ record_id }}&active=false"
+                       onclick="return confirm('Are you sure you want to deactivate this hospital?');">
+                        Deactivate
+                    </a>
+                {% else %}
+                    <a href="/updatehospital?id={{ record_id }}&active=true"
+                       onclick="return confirm('Are you sure you want to activate this hospital?');">
+                        Activate
+                    </a>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <script>
+        function searchHospitals() {
+            const input = document.getElementById("search-input");
+            const filter = input.value.toUpperCase();
+            const table = document.getElementById("customers");
+            const rows = table.getElementsByClassName("hospital-row");
+
+            for (let i = 0; i < rows.length; i++) {
+                const hospitalIdTd = rows[i].getElementsByClassName("hospital-id")[0];
+                const hospitalNameTd = rows[i].getElementsByClassName("hospital-name")[0];
+                const hospitalLocationTd = rows[i].getElementsByClassName("hospital-location")[0];
+                let hospitalId = "";
+                let hospitalName = "";
+                let hospitalLocation = "";
+
+                if (hospitalIdTd) {
+                    hospitalId = hospitalIdTd.textContent.toUpperCase();
+                }
+                if (hospitalNameTd) {
+                    hospitalName = hospitalNameTd.textContent.toUpperCase();
+                }
+                if (hospitalLocationTd) {
+                    hospitalLocation = hospitalLocationTd.textContent.toUpperCase();
+                }
+
+                if (hospitalId.indexOf(filter) > -1 || hospitalName.indexOf(filter) > -1 || hospitalLocation.indexOf(filter) > -1) {
+                    rows[i].style.display = "";
+                } else {
+                    rows[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+    {% include "footer.html" %}
+</body>
+</html>
+

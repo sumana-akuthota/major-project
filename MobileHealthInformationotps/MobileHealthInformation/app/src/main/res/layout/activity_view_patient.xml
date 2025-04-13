@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".view.ViewPatient"
+    android:background="@drawable/background1"
+    android:gravity="center">
+
+    <TextView
+        android:textSize="23dp"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:id="@+id/viewpatienthealthcardno"/>
+    <TextView
+        android:textSize="23dp"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:id="@+id/viewpatientaadhaarno"/>
+
+    <TextView
+        android:textSize="23dp"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:id="@+id/viewpatientpatientname"/>
+
+    <TextView
+        android:textSize="23dp"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:id="@+id/viewpatientage"/>
+
+    <TextView
+        android:textSize="23dp"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:id="@+id/viewpatientgender"/>
+
+    <TextView
+        android:textSize="23dp"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:id="@+id/viewpatientpatientcontactno"/>
+
+    <TextView
+        android:textSize="23dp"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:id="@+id/viewpatientaddress"/>
+    <Button
+        android:id="@+id/viewpatientuploaddocument"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Upload Document"
+        android:layout_margin="10dp"
+        android:layout_marginTop="16dp"
+        android:padding="10dp"/>
+
+    <Button
+        android:id="@+id/viewpatientsendrequest"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Send Claim Request"/>
+
+    <Button
+        android:id="@+id/viewpatientviewclaimrequests"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View Claim Requests"/>
+
+    <Button
+        android:id="@+id/viewpatientback"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Back"/>
+
+</LinearLayout>

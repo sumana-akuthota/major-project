@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".view.AddPatient"
+    android:background="@drawable/background1"
+    android:gravity="center">
+    <EditText
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
+        android:hint="Enter Family health card details"
+        android:id="@+id/addhealthcardnumber"/>
+
+
+    <EditText
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
+        android:hint="Enter Patient Aadhaar Number"
+        android:id="@+id/addpatientaadhaarnumber"/>
+
+    <EditText
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Patient Name"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:id="@+id/addpatientname"/>
+
+    <EditText
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Age"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:id="@+id/addpatientage"/>
+
+    <EditText
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Gender"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:id="@+id/addpatientgender"/>
+
+    <EditText
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Mobile Number"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:id="@+id/addpatientcontactnumber"/>
+
+    <EditText
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Address"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:id="@+id/addpatientaddress"/>
+
+    <EditText
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Password"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:id="@+id/password"/>
+
+    <Button
+        android:id="@+id/addfamilynumbersnextbutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Family Details"
+        android:textSize="25dp" />
+
+</LinearLayout>

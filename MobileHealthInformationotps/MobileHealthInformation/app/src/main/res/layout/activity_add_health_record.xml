@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".view.AddHealthRecord"
+    android:background="@drawable/background1"
+    android:gravity="center">
+
+    <EditText
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Medicine"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
+        android:id="@+id/addhealthrecordmedicine"/>
+
+    <EditText
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Treatment"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
+        android:id="@+id/addhealthrecordtreatment"/>
+
+    <EditText
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Doctor Name"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
+        android:id="@+id/addhealthrecorddoctor"/>
+
+    <Button
+        android:id="@+id/addhealthrecordsubmitbutton"
+        android:text="Add Health Record"
+        android:textSize="32dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

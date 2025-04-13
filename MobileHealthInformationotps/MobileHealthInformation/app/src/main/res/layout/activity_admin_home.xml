@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".view.AdminHome"
+    android:background="@drawable/background1"
+    android:gravity="center">
+
+    <Button
+        android:id="@+id/adminhomelisthospitals"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View Hospitals"/>
+
+    <Button
+        android:id="@+id/adminhomeaddhealthpolicy"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Health Policy"/>
+
+    <Button
+        android:id="@+id/adminhomelisthealthpolicies"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View Health Policies"/>
+
+    <Button
+        android:id="@+id/adminhomelistpolicyclaimrequests"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View Policy Claim Requests"/>
+
+    <!--<Button
+        android:id="@+id/adminhomesearchfamilydetails"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Search Family Details"/>-->
+
+    <Button
+        android:id="@+id/adminlogout"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Logout"/>
+
+</LinearLayout>

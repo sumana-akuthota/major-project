@@ -1,0 +1,238 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    {% include "header.html" %}
+    <style>
+        /* General styles (applied to all tables) */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        #search-container {
+            margin-bottom: 20px;
+            text-align: right;
+        }
+        #search-input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 300px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px auto;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        @media (max-width: 600px) {
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+        }
+
+        /* Styles specific to the policy/hospital info section */
+        #policy-hospital-info {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            width: 100%;
+            box-sizing: border-box;
+            text-align: left;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #policy-hospital-table {
+            margin-top: 10px;
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    {% include "menu2.html" %}
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    <h1>Patients List</h1>
+    <h1><strong>{{ message }}</strong></h1>
+
+    <div id="search-container">
+        <input type="text" id="search-input" onkeyup="searchPatients()" placeholder="Search by Name or Healthcard No...">
+    </div>
+
+    <table id="patients">
+        <tr>
+            <th>Healthcard No</th>
+            <th>Aadhaar No</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Contact No</th>
+            <th>Address</th>
+            <th>Family Member 1</th>
+            <th>Family Member 2</th>
+            <th>Policies Applied</th>
+            <th>Policies Approved</th>
+        </tr>
+
+        {% for healthcard_no, data in patients_with_family.items %}
+        <tr class="patient-row">
+            <td class="healthcard-no">{{ healthcard_no }}</td>
+            <td>{{ data.patient.aadhaarNo }}</td>
+            <td class="patient-name">{{ data.patient.name }}</td>
+            <td>{{ data.patient.age }}</td>
+            <td>{{ data.patient.gender }}</td>
+            <td>{{ data.patient.contactNo }}</td>
+            <td>{{ data.patient.address }}</td>
+            <td>
+                {% if data.familyMember1 %}
+                    Name: {{ data.familyMember1.name }}<br>
+                    Age: {{ data.familyMember1.age }}<br>
+                    Gender: {{ data.familyMember1.gender }}<br>
+                    Aadhaar: {{ data.familyMember1.aadhaarNo }}
+                {% else %}
+                    No Info
+                {% endif %}
+            </td>
+            <td>
+                {% if data.familyMember2 %}
+                    Name: {{ data.familyMember2.name }}<br>
+                    Age: {{ data.familyMember2.age }}<br>
+                    Gender: {{ data.familyMember2.gender }}<br>
+                    Aadhaar: {{ data.familyMember2.aadhaarNo }}
+                {% else %}
+                    No Info
+                {% endif %}
+            </td>
+            <td>
+                <a href="#" class="policies-applied-count" data-healthcard="{{ healthcard_no }}">
+                    {{ data.policies_applied_count }}
+                </a>
+            </td>
+            <td>{{ data.policies_approved_count }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <div id="policy-hospital-info">
+        <h3>Policies and Hospitals</h3>
+        <table id="policy-hospital-table">
+            <thead>
+                <tr>
+                    <th>Policy Name</th>
+                    <th>Hospital Name</th>
+                    <th>Amount Approved</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Loading...</td>
+                    <td>Loading...</td>
+                    <td>Loading...</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function searchPatients() {
+            const input = document.getElementById("search-input");
+            const filter = input.value.toUpperCase();
+            const table = document.getElementById("patients"); // Get the table by its ID
+            const rows = table.getElementsByTagName("tr");
+            let found = false;
+
+            for (let i = 1; i < rows.length; i++) { // Start from 1 to exclude the header row
+                const healthcardTd = rows[i].getElementsByClassName("healthcard-no")[0];
+                const patientNameTd = rows[i].getElementsByClassName("patient-name")[0];
+
+                if (healthcardTd || patientNameTd) {
+                    const healthcardText = healthcardTd.textContent.toUpperCase();
+                    const patientNameText = patientNameTd.textContent.toUpperCase();
+
+                    if (healthcardText.indexOf(filter) > -1 || patientNameText.indexOf(filter) > -1) {
+                        rows[i].style.display = "";
+                        found = true;
+                    } else {
+                        rows[i].style.display = "none";
+                    }
+                } else {
+                    rows[i].style.display = "none";
+                }
+            }
+        }
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const policyLinks = document.querySelectorAll('.policies-applied-count');
+            const infoDiv = document.getElementById('policy-hospital-info');
+            const infoTableBody = document.querySelector('#policy-hospital-table tbody');
+
+            policyLinks.forEach(link => {
+                link.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const healthcard = link.dataset.healthcard;
+
+                    infoDiv.style.display = 'block';
+                    infoTableBody.innerHTML = '<tr><td>Loading...</td><td>Loading...</td><td>Loading...</td></tr>';
+
+                    fetch(`/patient_policies_hospitals/?healthcard=${healthcard}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.error) {
+                                infoTableBody.innerHTML = `<tr><td colspan="3">${data.error}</td></tr>`;
+                            } else {
+                                infoTableBody.innerHTML = '';
+                                if (data.length === 0) {
+                                    infoTableBody.innerHTML = `<tr><td colspan="3">No policies found for this patient.</td></tr>`;
+                                } else {
+                                    data.forEach(item => {
+                                        infoTableBody.innerHTML += `
+                                            <tr>
+                                                <td>${item.policy_name}</td>
+                                                <td>${item.hospital_name}</td>
+                                                <td>${item.amount_approved}</td>
+                                            </tr>
+                                        `;
+                                    });
+                                }
+                            }
+                        })
+                        .catch(error => {
+                            infoTableBody.innerHTML = `<tr><td colspan="3">Error: ${error.message}</td></tr>`;
+                        });
+                });
+            });
+        });
+    </script>
+    {% include "footer.html" %}
+</body>
+</html>
+
+
+
+
+
+
+
+

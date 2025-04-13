@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".view.AddHealthPolicy"
+    android:background="@drawable/background1"
+    android:gravity="center">
+
+    <EditText
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Policy Name"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
+        android:id="@+id/addhealthpolicypolicyname"/>
+
+    <EditText
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Policy Description"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
+        android:id="@+id/addhealthpolicydescription"/>
+
+    <EditText
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Coverage Amount"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
+        android:id="@+id/addhealthpolicycoverageamount"/>
+
+    <Button
+        android:id="@+id/addhealthpolicysubmitbutton"
+        android:text="Add Health Policy"
+        android:textSize="32dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
